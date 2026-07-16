@@ -1,0 +1,3 @@
+﻿  AppointmentModule.cpp
+C:\Users\User\Desktop\spc\Assignment\Hair Saloon\Hair Saloon\AppointmentModule.cpp(173,30): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Hair Saloon.vcxproj -> C:\Users\User\Desktop\spc\Assignment\Hair Saloon\x64\Debug\Hair Saloon.exe

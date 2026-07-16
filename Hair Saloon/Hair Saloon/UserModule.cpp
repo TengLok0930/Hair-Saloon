@@ -18,44 +18,45 @@ void staffMaintenancePage() {
 
 void memberHomePage(string username) {
     int selection = 0;
-    bool validate = true;
+    clearScreen();
 
     do {
         cout << "Welcome " << username << "!" << endl;
         cout << "What would you like to do?" << endl;
-        cout << "1. Manage an appointment\n2. Buy an item\n3. View reciepts\n0. Logout" << endl;
+        cout << "1. Manage an appointment\n2. Buy an item\n3. View receipts\n0. Logout" << endl;
         cout << "Selection: ";
         cin >> selection;
+        cin.ignore();
 
         switch (selection) {
         case 1:
-            clearScreen();
-            //navigate to manage appointment (appointment module)
+            appointmentManager();
             break;
+
         case 2:
-            clearScreen();
             //navigate to buy item (inventory module)
             break;
+
         case 3:
-            clearScreen();
             //navigate to view reciept (billing module)
             break;
+
         case 0:
-            clearScreen();
             mainScreen();
             break;
+
         default:
             clearScreen();
-            cout << "Invalid input! Please enter 0, 1, 2 or 3!";
-            validate = false;
-            break;
+            cout << "Invalid input! Please enter 0, 1, 2, or 3!";
+
         }
-    } while (!validate);
+    } while (true);
 }
 
 void staffHomePage(string username) {
     int selection = 0;
     bool validate = true;
+    clearScreen();
 
     do {
         cout << "Welcome " << username << "!" << endl;
@@ -64,44 +65,39 @@ void staffHomePage(string username) {
         \n4. Customer maintenance\n5. View appointment done\n0. Logout" << endl;
         cout << "Selection: ";
         cin >> selection;
+        cin.ignore();
 
         switch (selection) {
         case 1:
-            clearScreen();
-            //navigate to POS system (inventory module??)
+            //navigate to POS system (billing and payment module)
             break;
         case 2:
-            clearScreen();
-            //navigate to view assigned appointment (appointment module)
+            assignedAppointmentsView(username);
             break;
         case 3:
-            clearScreen();
             //navigate to inventory maintenance (inventory module)
             break;
         case 4:
-            clearScreen();
             customerMaintenancePage();
             break;
         case 5:
-            clearScreen();
-            //navigate to view appointment done (appointment module)
+            completedAppointmentsView(username);
             break;
         case 0:
-            clearScreen();
             mainScreen();
             break;
         default:
             clearScreen();
-            cout << "Invalid input! Please enter 0, 1, 2 or 3!"; \
-                validate = false;
-            break;
+            cout << "Invalid input! Please enter 0, 1, 2, 3, 4, or 5!";
+
         }
-    } while (!validate);
+    } while(true);
 }
 
 void adminHomePage(string username) {
     int selection = 0;
     bool validate = true;
+    clearScreen();
 
     do {
         cout << "Welcome " << username << "!" << endl;
@@ -110,33 +106,28 @@ void adminHomePage(string username) {
         \n4. View reportings\n0. Logout" << endl;
         cout << "Selection: ";
         cin >> selection;
+        cin.ignore();
 
         switch (selection) {
         case 1:
-            clearScreen();
             //navigate to inventory maintenance (inventory module)
             break;
         case 2:
-            clearScreen();
             staffMaintenancePage();
             break;
         case 3:
-            clearScreen();
-            //navigate to assign appointments (appointment module)
+            assignAppointmentsPage();
             break;
         case 4:
-            clearScreen();
             //navigate to view reportings (reporting module)
             break;
         case 0:
-            clearScreen();
             mainScreen();
             break;
         default:
             clearScreen();
-            cout << "Invalid input! Please enter 0, 1, 2 or 3!"; \
-                validate = false;
-            break;
+            cout << "Invalid input! Please enter 0, 1, 2, 3, or 4!";
+
         }
-    } while (!validate);
+    } while(true);
 }

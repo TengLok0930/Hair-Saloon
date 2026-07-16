@@ -28,6 +28,7 @@ int validateUser(string username, string password) {
 void loginScreen() {
     bool validate = true;
     string username, password;
+    clearScreen();
 
     do {
         cout << "Login" << endl;
@@ -40,29 +41,26 @@ void loginScreen() {
 
         switch (user) {
         case 1:
-            clearScreen();
             memberHomePage(username);
             break;
         case 2:
-            clearScreen();
             staffHomePage(username);
             break;
         case 3:
-            clearScreen();
             adminHomePage(username);
             break;
         default:
             clearScreen();
             cout << "User not found! Please try again!" << endl;
-            validate = false;
             break;
         }
-    } while (!validate);
+    } while (validate);
 }
 
 void registerScreen() {
     bool validate = true;
     string username, phoneNo, password, confirmPassword;
+    clearScreen();
 
     do {
         cout << "Register" << endl;
@@ -80,6 +78,7 @@ void registerScreen() {
 void mainScreen() {
     int selection = 0;
     bool validate = true;
+    clearScreen();
 
     do {
         cout << "Welcome to XYZ Saloon!" << endl;
@@ -90,11 +89,9 @@ void mainScreen() {
 
         switch (selection) {
         case 1:
-            clearScreen();
             loginScreen();
             break;
         case 2:
-            clearScreen();
             registerScreen();
             break;
         case 0:
